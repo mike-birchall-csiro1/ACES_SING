@@ -15,7 +15,7 @@ on:
 
 env:
     ENV_NAME:        casacore
-    PYTHON_VERSION: 
+    PYTHON_VERSION:  3.12
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
