@@ -42,6 +42,7 @@ jobs:
          conda init
          source ~/.bashrc
          conda activate ${{ env.ENV_NAME }}
+         conda install -c conda-forge casacore compilers boost -y
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
