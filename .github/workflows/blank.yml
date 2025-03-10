@@ -36,8 +36,8 @@ jobs:
           activate-environment: ""
 
       # Simple conda checks:
-      - name "Setup CONDA for CASACORE"
-       run: |
+      - name: "Setup CONDA for CASACORE"
+        run: |
          conda create -c conda-forge -n $${{ env.ENV_NAME }} python=$${{ env.PYTHON_VERSION }} -y
          conda activate ${{ env.ENV_NAME }}
       
