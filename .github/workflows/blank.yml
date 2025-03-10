@@ -50,6 +50,13 @@ jobs:
          python -c "import numpy"
          echo "=============================      END TESTING        =========================="
 
+      # Install aces:
+      - name: "Install ACES"
+        run: |
+         git clone https://bitbucket.csiro.au/scm/aces/aces-apps.git
+         cd aces-apps
+
+
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
