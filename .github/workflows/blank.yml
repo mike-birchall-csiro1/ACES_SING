@@ -45,6 +45,11 @@ jobs:
          conda install -c conda-forge casacore compilers boost -y
          pip install uv
          uv pip install python-casacore
+         echo "============================= TESTING CASCORE INSTALL =========================="
+         python -c "from casacore.tables import table"
+         python -c "import numpy"
+         echo "=============================      END TESTING        =========================="
+
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
