@@ -13,6 +13,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+    ENV_NAME:        casacore
+    PYTHON_VERSION: 
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -30,7 +34,13 @@ jobs:
         with:
           auto-activate-base: true
           activate-environment: ""
-          
+
+      # Simple conda checks:
+      - name "Setup CONDA for CASACORE"
+       run: |
+         conda create -c conda-forge -n $${{ env.ENV_NAME }} python=$${{ env.PYTHON_VERSION }} -y
+         conda activate ${{ env.ENV_NAME }}
+      
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
