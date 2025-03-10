@@ -53,8 +53,19 @@ jobs:
       # Install aces:
       - name: "Install ACES"
         run: |
+         # Checkout aces
          git clone https://bitbucket.csiro.au/scm/aces/aces-apps.git
+         
          cd aces-apps
+
+         # Now pip install the askap dependencies
+         pip install -r askap-requirements.txt
+
+         # Now pip install the cloned aces-app into the virtual environment
+         pip install -e `pwd`
+
+# Return to the initial directory
+cd ${START_DIR}
 
 
       
