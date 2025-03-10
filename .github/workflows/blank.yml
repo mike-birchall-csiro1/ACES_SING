@@ -40,6 +40,7 @@ jobs:
         run: |
          conda create -c conda-forge -n ${{ env.ENV_NAME }} python=${{ env.PYTHON_VERSION }} -y
          conda init
+         source ~/.bashrc
          conda activate ${{ env.ENV_NAME }}
       
       # Runs a single command using the runners shell
