@@ -43,6 +43,7 @@ jobs:
          source ~/.bashrc
          conda activate ${{ env.ENV_NAME }}
          conda install -c conda-forge casacore compilers boost -y
+         uv pip install python-casacore
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
